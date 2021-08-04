@@ -33,6 +33,9 @@ var createScene = function () {
     ball = BABYLON.MeshBuilder.CreateSphere("ball", {diameter:2, segments:32}, scene);
     ball.position.set(0, 5, 0);
     ball.physicsImpostor = new BABYLON.PhysicsImpostor(ball, BABYLON.PhysicsImpostor.MeshImpostor, {mass: 1, restitution:0.9}, scene);
+    var ballmat = new BABYLON.StandardMaterial("ballmat", scene);
+    ballmat.diffuseColor = new BABYLON.Color3(1, 0, 0);
+    ball.material = ballmat;
     return scene;
 };
 
